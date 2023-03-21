@@ -248,7 +248,7 @@
         var _ = this;
         if (_.options.slidesToShow === 1 && _.options.adaptiveHeight === true && _.options.vertical === false) {
             var targetHeight = 
-            // change added here to fix bug with adaptiveHeight observed on the NewEra size guide page
+            // change added here to fix bug with adaptiveHeight
                 $(_.$list.context).hasClass('slick-adaptive-height-fix') ? 
                 _.$slides.eq(_.currentSlide).children().outerHeight(true) :
                 _.$slides.eq(_.currentSlide).outerHeight(true);
@@ -2132,7 +2132,7 @@
 
         if (_.options.slidesToShow === 1 && _.options.adaptiveHeight === true && _.options.vertical === false) {
             var targetHeight = 
-            // change added here to fix bug with adaptiveHeight observed on the NewEra size guide page
+            // change added here to fix bug with adaptiveHeight
                 $(_.$list.context).hasClass('slick-adaptive-height-fix') ? 
                 _.$slides.eq(_.currentSlide).children().outerHeight(true) :
                 _.$slides.eq(_.currentSlide).outerHeight(true);
