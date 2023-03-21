@@ -247,7 +247,11 @@
     Slick.prototype.animateHeight = function() {
         var _ = this;
         if (_.options.slidesToShow === 1 && _.options.adaptiveHeight === true && _.options.vertical === false) {
-            var targetHeight = _.$slides.eq(_.currentSlide).outerHeight(true);
+            var targetHeight = 
+            // change added here to fix bug with adaptiveHeight observed on the NewEra size guide page
+                $(_.$list.context).hasClass('slick-adaptive-height-fix') ? 
+                _.$slides.eq(_.currentSlide).children().outerHeight(true) :
+                _.$slides.eq(_.currentSlide).outerHeight(true);
             _.$list.animate({
                 height: targetHeight
             }, _.options.speed);
@@ -2127,7 +2131,11 @@
         var _ = this;
 
         if (_.options.slidesToShow === 1 && _.options.adaptiveHeight === true && _.options.vertical === false) {
-            var targetHeight = _.$slides.eq(_.currentSlide).outerHeight(true);
+            var targetHeight = 
+            // change added here to fix bug with adaptiveHeight observed on the NewEra size guide page
+                $(_.$list.context).hasClass('slick-adaptive-height-fix') ? 
+                _.$slides.eq(_.currentSlide).children().outerHeight(true) :
+                _.$slides.eq(_.currentSlide).outerHeight(true);
             _.$list.css('height', targetHeight);
         }
 
